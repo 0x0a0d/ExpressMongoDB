@@ -2,10 +2,10 @@ const {format} = require('mongodb-uri');
 const mongoUriSchema = {
     hosts: [
         {
-            host: '127.0.0.1'
+            host: process.env.DATABASE_JOB_HOST
         }
     ],
-    database: 'userpass'
+    database: process.env.DATABASE_JOB_DB
 };
 
 module.exports = format(mongoUriSchema);

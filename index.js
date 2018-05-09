@@ -6,9 +6,9 @@ if (result.error) {
 const {server} = require('./www');
 const {mongoConnection} = require('./helper/database');
 const {component: {mongodb, server: serverConfig}} = require('./config');
-const {vnPhone, auth} = mongodb;
+const {job, auth} = mongodb;
 
-mongoConnection([vnPhone, auth])
+mongoConnection([job, auth])
     .then(()=>{
         server(serverConfig);
     });

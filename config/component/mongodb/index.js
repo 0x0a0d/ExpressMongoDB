@@ -1,7 +1,7 @@
-const vnPhone = require('./vnPhone');
+const job = require('./job');
 const auth = require('./auth');
 
 module.exports = {
-    vnPhone,
+    job,
     auth
 };
