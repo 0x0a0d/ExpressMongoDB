@@ -1,7 +1,13 @@
 const post = require('./post');
 const get = require('./get');
+const register = require('./register');
+
 
 module.exports = route => {
-    route.get('/login', get);
-    route.post('/login', post);
+    route
+        .route('/login')
+        .get(get)
+        .post(post);
+
+    register(route);
 };

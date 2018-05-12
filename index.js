@@ -8,7 +8,7 @@ const {mongoConnection} = require('./helper/database');
 const {component: {mongodb, server: serverConfig}} = require('./config');
 const {job, auth} = mongodb;
 
-mongoConnection([job, auth])
+mongoConnection(job, auth)
     .then(()=>{
         server(serverConfig);
     });

@@ -25,9 +25,6 @@ async function mongoConnection(connectionName, onConnected) {
     connectionName.conn.connect(connectionName.uri, connectionName.option).catch(e=>{console.error(e.message)})
 }
 
-module.exports = (connections) => {
-    if (! Array.isArray(connections)) {
-        connections = [connections];
-    }
+module.exports = (...connections) => {
     return Promise.all(connections.map(connection=>new Promise(resolve => mongoConnection(connection, resolve))));
 };
